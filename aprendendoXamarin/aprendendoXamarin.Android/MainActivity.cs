@@ -6,20 +6,26 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android;
 
-namespace aprendendoXamarin.Droid
+namespace ListViewDemo
 {
-    [Activity(Label = "aprendendoXamarin", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "ListViewDemo", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle bundle)
         {
-            TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
 
-            base.OnCreate(savedInstanceState);
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            base.OnCreate(bundle);
+
+            SetContentView(Resource.Layout.Main);
+            EmployeeList employeeList = new EmployeeList();
+            var employees = employeeList.GetEmployees(20);
+
+            ListView lvEmployees = FindViewById<ListView>(id: Resource.Id.lvEmployee);
+            EmployeeAdapter adapter = new EmployeeAdapter(employees);
+            lvEmployees.Adapter = adapter;
         }
+
     }
 }
