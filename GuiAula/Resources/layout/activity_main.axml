@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:background="@drawable/fundo">
+	<TextView
+		android:text="Conversor de Moedas"
+		android:layout_width="300dp"
+		android:layout_height="80dp"
+		android:gravity="center"
+		android:textColor="#fffafafa" />
+	<TextView
+		android:text="Dólares"
+		android:layout_width="80dp"
+		android:layout_height="50dp"
+		android:layout_marginTop="80dp"
+		android:layout_marginRight="80dp"
+		android:gravity="center"
+		android:textColor="#ffeeeeee" />
+
+	<EditText
+		android:text="0"
+		android:numeric="integer"
+		android:inputType="number"
+		android:id="@+id/txtDolares"
+		android:layout_marginTop="130dp"
+		android:layout_marginRight="wrap_content"
+		android:layout_marginTop="180dp"
+		android:layout_alignParentRight="true"
+		android:gravity="center"
+		android:textColor="#ffeeeeee"/>
+	<TextView 
+		android:text="Reais"
+		android:layout_width="80dp"
+		android:layout_height="50dp"
+		android:layout_marginTop="180dp"
+		android:layout_marginRight="80dp"
+		android:gravity="center"
+		android:textColor="#ffeeeeee"/>
+	<EditText
+		android:text="0"
+		android:numeric="integer"
+		android:inputType="number"
+		android:id="@+id/txtReais"
+		android:layout_marginTop="130dp"
+		android:layout_marginRight="wrap_content"
+		android:layout_marginTop="180dp"
+		android:layout_alignParentRight="true"
+		android:gravity="center"
+		android:textColor="#ffeeeeee"
+		android:shadowColor="#fff5f5f5" />
+	<Button
+		android:text="Converter"
+		android:id="@+id/btnConverter"
+		android:background="#FFFF1111"
+		android:layout_width="130"
+	/>
+
+</RelativeLayout>
